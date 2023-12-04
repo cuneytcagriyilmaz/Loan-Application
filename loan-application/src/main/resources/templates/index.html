@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome </title>
+    <link rel="stylesheet"
+          type="text/css"
+          th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+
+
+<div class="container-fluid text-center">
+    <br>
+    <br>
+    <h1>Welcome to Banking Application</h1>
+    <br>
+    <br>
+    <p>Add credit card points, user update, and delete user from the Manage Users screen.</p>
+    <br>
+    <br>
+    <a class="h2" th:href="@{/userpage}">Manage Users</a>
+    <br>
+    <br>
+    <a class="h2" th:href="@{/creditpage}">Manage Credits </a>
+    <!--    <a class="h2" th:href="@{/login}">Login</a>-->
+    <!--    <a class="h2" th:href="@{/registration}">Register</a>-->
+
+</div>
+
+</body>
+</html>

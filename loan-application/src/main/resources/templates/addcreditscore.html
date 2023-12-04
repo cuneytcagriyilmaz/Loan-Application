@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Registration</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+<body>
+
+<!-- create navigation bar ( header) -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"
+              data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+              aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span
+              class="icon-bar"></span> <span class="icon-bar"></span> <span
+              class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" th:href="@{/}">Credit Module</a>
+    </div>
+  </div>
+</nav>
+
+<br>
+<br>
+<!-- Create HTML registration form -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <!-- success message -->
+      <div th:if="${param.success}">
+        <div class="alert alert-info">Process Is Success
+        </div>
+      </div>
+
+      <h1>Add Credit To User</h1>
+
+      <form th:action="@{/addcreditscore}" method="post" th:object="${credit}">
+        <div class="form-group">
+          <label class="control-label" for="user"> userId </label>
+          <input id="user" class="form-control" th:field="*{user}"
+                 required autofocus="autofocus"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="creditScore"> Credit Score </label>
+          <input id="creditScore" class="form-control" th:field="*{creditScore}"
+                 required autofocus="autofocus"/>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-success">Add Credit Score</button>
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

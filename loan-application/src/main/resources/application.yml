@@ -1,0 +1,32 @@
+server:
+  port: 9062
+spring:
+  application:
+    name: loan-application
+  datasource:
+    url: jdbc:mysql://localhost:3306/loan-application?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: 250698
+    hikari:
+      connection-timeout: 3000000
+    driverClassName: com.mysql.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+  security:
+    user:
+      name: remesh
+      password: password
+      roles: USER
+logging:
+  pattern:
+    console: "[%d{yyyy-MM-dd'T'HH:mm:ss.ss'Z'}] [%C] [%t] [%L] [%-5p] %m%n"
+    file: "[%d{yyyy-MM-dd'T'HH:mm:ss.ss'Z'}] [%C] [%t] [%L] [%-5p] %m%n"
+  level:
+    com.example.*: DEBUG
+  file:
+    name: D:/log/loanapp.log
+

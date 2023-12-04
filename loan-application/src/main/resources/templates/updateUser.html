@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Registration</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+<body>
+
+<!-- create navigation bar ( header) -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"
+              data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+              aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span
+              class="icon-bar"></span> <span class="icon-bar"></span> <span
+              class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" th:href="@{/}">Update Module</a>
+    </div>
+  </div>
+</nav>
+
+<br>
+<br>
+<!-- Create HTML registration form -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <!-- success message -->
+      <div th:if="${param.success}">
+        <div class="alert alert-info">Update Success</div>
+      </div>
+
+      <h1>Update</h1>
+
+      <form th:action="@{/update}" method="post" th:object="${user}">
+
+        <div class="form-group">
+          <label class="control-label" for="userId"> userId </label>
+          <input id="userId" class="form-control" th:field="*{userId}"
+          />
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="userTc"> userTc </label>
+          <input id="userTc" class="form-control" th:field="*{userTc}"
+                 required autofocus="autofocus" />
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="userName"> userName </label> <input
+                id="userName" class="form-control" th:field="*{userName}"
+                required autofocus="autofocus" />
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="userSurname"> userSurname </label> <input
+                id="userSurname" class="form-control" th:field="*{userSurname}" required
+                autofocus="autofocus" />
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="phoneNumber"> phoneNumber </label> <input
+                id="phoneNumber" class="form-control" th:field="*{phoneNumber}" required
+                autofocus="autofocus" />
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="monthlyIncome"> monthlyIncome </label> <input
+                id="monthlyIncome" class="form-control" th:field="*{monthlyIncome}" required
+                autofocus="autofocus" />
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="birthdate"> birthdate </label> <input
+                id="birthdate" class="form-control" th:field="*{birthdate}" required
+                autofocus="autofocus" />
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="birthdate"> guarentee </label> <input
+                id="guarentee" class="form-control" th:field="*{guarentee}" required
+                autofocus="autofocus" />
+        </div>
+
+
+        <div class="form-group">
+          <label class="control-label" for="password"> Password </label> <input
+                id="password" class="form-control" type="password"
+                th:field="*{password}" required autofocus="autofocus" />
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-success">Save</button>
+        </div>
+
+
+
+
+
+
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Credit </title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+
+<div class="container-fluid text-center">
+    <div><h2> Manage Credit </h2></div>
+    <div class="m-2">
+        <a class="h3" th:href="@{/addcreditscore}">Add Credit</a>
+        <a class="h3" th:href="@{/makeanapplication}">Make an Application</a>
+    </div>
+
+    <div th:if="${message}" class="alert alert-success text-center">
+        [[${message}]]
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Credit ScoreId</th>
+                <th>Credit Score</th>
+                <th>Status</th>
+                <th>Total Borrow Amount</th>
+                <th>User Id</th>
+                <th>Make an application</th>
+
+            </tr>
+            </thead>
+            <th:block th:each="credit : ${listCredits}">
+                <tr>
+
+                    <td>[[${credit.creditScoreId}]]</td>
+                    <td>[[${credit.creditScore}]]</td>
+                    <td>[[${credit.status}]]</td>
+                    <td>[[${credit.totalBorrowAmount}]]</td>
+                    <td>[[${credit.user}]]</td>
+<!--                    <td>-->
+<!--                        <a th:href="@{/makeanapplication/{id}(id=${user.userId})}" class="btn btn-danger">Make An Application</a>-->
+<!--                    </td>-->
+                    <td>
+                        <a th:href="@{/makeanapplication}" class="btn btn-danger">Make An Application</a>
+                    </td>
+
+                </tr>
+            </th:block>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
